@@ -17,8 +17,10 @@ final class Version20200430003522 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         $this->abortIf(
-            $this->connection->getDatabasePlatform()->getName()
-            !== 'mysql', 'Migration can only be executed safely on \'mysql\'.'
+            $this->connection
+            ->getDatabasePlatform()
+            ->getName()!== 'mysql',
+            'Migration can only be executed safely on \'mysql\'.'
         );
         
         $this->addSql(
@@ -32,8 +34,10 @@ final class Version20200430003522 extends AbstractMigration
     public function down(Schema $schema) : void
     {
         $this->abortIf(
-            $this->connection->getDatabasePlatform()->getName()
-           !== 'mysql', 'Migration can only be executed safely on \'mysql\'.'
+            $this->connection
+            ->getDatabasePlatform()
+            ->getName()!== 'mysql',
+            'Migration can only be executed safely on \'mysql\'.'
         );
         $this->addSql('DROP TABLE property');
     }

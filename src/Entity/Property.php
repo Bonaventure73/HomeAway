@@ -4,9 +4,6 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\PropertyRepository")
- */
 class Property
 {
     const HEAT = [0 => 'Electrique', 1 => 'Gaz'];
